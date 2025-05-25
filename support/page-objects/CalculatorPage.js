@@ -27,7 +27,6 @@ class CalculatorPage {
 
   visit() {
     cy.visit('https://www.calculatorsoup.com/calculators/math/basic.php');
-    //cy.get(this.selectors.display).should('exist');
     return this;
   }
 
@@ -61,6 +60,31 @@ class CalculatorPage {
 
   getDisplayValue() {
     return cy.get(this.selectors.display).invoke('val');
+  }
+
+  performChainedOperations(sequence) {
+    sequence.forEach(item => this.clickButton(item.toString()));
+    return this;
+  }
+
+  typeWithKeyboard(sequence) {
+    cy.get('body').type(sequence);
+    return this;
+  }
+
+  shouldHaveAccessibilityLabel(expectedLabel) {
+    cy.get(this.selectors.display).should('have.attr', 'aria-label', expectedLabel);
+    return this;
+  }
+
+  takeScreenshot(name) {
+    cy.screenshot(name);
+    return this;
+  }
+
+  focusButton(label) {
+    cy.get(this.selectors.buttons[label]).focus();
+    return this;
   }
 }
 
