@@ -1,0 +1,15 @@
+{
+  "files.associations": {
+    "*.cy.js": "javascript"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "cypress.env": {},
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
