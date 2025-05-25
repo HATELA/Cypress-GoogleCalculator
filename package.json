@@ -1,0 +1,12 @@
+{
+  "name": "calculator-e2e-tests",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "http-server . -p 8080",
+    "test": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^12.0.0",
+    "http-server": "^14.1.1"
+  }
+}
