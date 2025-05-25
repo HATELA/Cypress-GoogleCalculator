@@ -22,13 +22,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Serve calculator app
-        run: |
-          npm install -g http-server
-          http-server . -p 8080 &
-        env:
-          CI: true
-
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
